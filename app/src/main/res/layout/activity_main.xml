@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyMediumLight"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ToolbarTheme"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+    <TextView
+        android:id="@+id/whoWonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="47dp"
+        android:layout_marginRight="47dp"
+        android:layout_marginBottom="52dp"
+        android:text="TextView"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/newGameButton"
+        android:layout_width="163dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/rounded_button"
+        android:onClick="runNewGame"
+        android:text="New game"
+        android:textColor="#494646"
+        android:visibility="invisible"
+        app:backgroundTint="#00E83F3F"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="320dp"
+        android:layout_height="309dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/board"
+        app:columnCount="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rowCount="3">
+
+        <ImageView
+            android:id="@+id/imageView0_0"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:onClick="dropIn"
+            android:tag="0_0"
+            app:layout_column="0"
+            app:layout_gravity="center"
+            app:layout_row="0" />
+
+        <ImageView
+            android:id="@+id/imageView0_1"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:onClick="dropIn"
+            android:tag="0_1"
+            app:layout_column="1"
+            app:layout_gravity="center"
+            app:layout_row="0" />
+
+        <ImageView
+            android:id="@+id/imageView0_2"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:onClick="dropIn"
+            android:tag="0_2"
+            app:layout_gravity="center" />
+
+        <ImageView
+            android:id="@+id/imageView1_0"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:onClick="dropIn"
+            android:tag="1_0"
+            app:layout_gravity="center" />
+
+        <ImageView
+            android:id="@+id/imageView1_1"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:onClick="dropIn"
+            android:tag="1_1"
+            app:layout_gravity="center" />
+
+        <ImageView
+            android:id="@+id/imageView1_2"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:onClick="dropIn"
+            android:tag="1_2"
+            app:layout_gravity="center" />
+
+        <ImageView
+            android:id="@+id/imageView2_0"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:onClick="dropIn"
+            android:tag="2_0"
+            app:layout_gravity="center" />
+
+        <ImageView
+            android:id="@+id/imageView2_1"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:onClick="dropIn"
+            android:tag="2_1"
+            app:layout_gravity="center" />
+
+        <ImageView
+            android:id="@+id/imageView2_2"
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:onClick="dropIn"
+            android:tag="2_2"
+            app:layout_gravity="center" />
+
+    </androidx.gridlayout.widget.GridLayout>
+
+    <ImageView
+        android:id="@+id/pickColorXImageButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginBottom="48dp"
+        android:onClick="pickColorForX"
+        app:layout_constraintBottom_toTopOf="@+id/newGameButton"
+        app:layout_constraintStart_toEndOf="@+id/textPlayerX"
+        app:srcCompat="@drawable/circle" />
+
+    <TextView
+        android:id="@+id/textPlayerX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginBottom="61dp"
+        android:text="Player X color"
+        android:textColor="#272525"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/newGameButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/pickColorOImageButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginRight="54dp"
+        android:layout_marginBottom="65dp"
+        android:onClick="pickColorForO"
+        app:layout_constraintBottom_toTopOf="@+id/whoWonText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/circle" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="72dp"
+        android:text="Player O color"
+        android:textColor="#272525"
+        app:layout_constraintBottom_toTopOf="@+id/whoWonText"
+        app:layout_constraintEnd_toStartOf="@+id/pickColorOImageButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
